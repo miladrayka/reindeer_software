@@ -1,2 +1,2 @@
 # REINDEER Software
-A protein-ligand feature generator software.
+A protein-ligand feature generator **software**.
