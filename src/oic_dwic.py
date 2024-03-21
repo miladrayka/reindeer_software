@@ -3,7 +3,6 @@
 import time
 from glob import glob
 from pathlib import Path
-from collections import defaultdict
 from joblib import Parallel, delayed
 
 import numpy as np
@@ -75,7 +74,6 @@ class FeatureGenerator(object):
         """
 
         df = pd.DataFrame.from_dict(feature_vectors, orient="index")
-        df = df.applymap(lambda x: x[0], na_action="ignore")
         df = df.fillna(0.0)
 
         df.to_csv(filename, index=True, index_label="pdbid")
@@ -146,7 +144,7 @@ class InterAtomicContact(FeatureGenerator):
         Returns
         -------
         dict
-            return feature vector of a protein-ligand complex.
+            Return feature vector of a protein-ligand complex.
         """
 
         ligand = mol2parser.Mol2Parser(ligand_file)
@@ -157,7 +155,7 @@ class InterAtomicContact(FeatureGenerator):
         )
 
         groups = extracted_protein_atoms.keys()
-        feature_vector = defaultdict(list)
+        feature_vector = {}
 
         for group in groups:
             for protein_element in utils.protein_elements:
@@ -195,7 +193,7 @@ class InterAtomicContact(FeatureGenerator):
                         else:
                             name = protein_element + "_" + ligand_element
 
-                        feature_vector[name].append(feature)
+                        feature_vector[name] = feature
 
         return feature_vector
 
