@@ -9,8 +9,8 @@ import numpy as np
 import pandas as pd
 from scipy import spatial
 
-from script import utils
-from script import mol2parser
+from .script import utils
+from .script import mol2parser
 
 
 class FeatureGenerator(object):
