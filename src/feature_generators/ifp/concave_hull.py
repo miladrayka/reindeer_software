@@ -1,5 +1,5 @@
 #%reset -f
-# Source: debbydanwang: IFPscore. Accessed on March 24, 2024. Available at [github](https://github.com/debbydanwang/IFPscore)
+# Source: debbydanwang: IFPscore. Accessed on March 24, 2024. Available at https://github.com/debbydanwang/IFPscore
 
 import numpy as np
 from .geometry_alg import RT, Graph, find_elements, solid_angle_tetra
