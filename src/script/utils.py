@@ -142,6 +142,45 @@ ECIF_LigandAtoms = [
 ]
 
 
+# Parameters for PrtCmm IFP:
+# alg_type - ifp algorithm ('avg', 'classic')
+# int_cutoff: distance cutoff for identifying contacting atoms in protein-ligand interfaces
+# ch_para - parameters for constructing alpha shapes (concave hulls) for protein and ligand
+#                weighted: weighted alpha shape (1) or mlnot (0)
+#                alpha: alpha values for protein (alpha[0]) and ligand (alpha[1])
+#                alpha_step: steps for tuning alpha shapes if alpha = -1 (alpha_step[0] for protein and alpha_step[1] fro ligand)
+# bins - for finding protein-ligand contacts in different ranges
+# ifptype - interaction fingerprint type, 'splif', 'ecfp' or 'plec'
+# degrees - ECFP radii for the ifp
+# prop - a list of atomic properties, full list as below
+# heavy_atoms: use heavy atoms or all atoms
+# hash_type: type for the hash function ('str' or 'vec')
+# idf_power: power for the identifiers hashed by hash_ecfp ('str')
+# folder_para - parameters for fingerprint folding
+#                power: fingerprint folding size (2^power bits)
+#                counts: use occurences of identifiers (1) or not (0)
+
+prtcmm_ifp_parameters = {
+    "alg_type": "avg",
+    "ch_para": {"weighted": 0, "alpha": [-1, -1], "alpha_step": [0.1, 0.1]},
+    "contact_para": {"int_cutoff": 4.5, "bins": [(0, 4.5)]},
+    "ifp_para": {
+        "ifptype": "ecfp",
+        "degrees": [1, 1],
+        "prop": [
+            "AtomicMass",
+            "TotalConnections",
+            "HeavyNeighborCount",
+            "HCount",
+            "FormalCharge",
+        ],
+        "heavy_atoms": 1,
+        "hash_type": "vec",
+        "idf_power": 64,
+    },
+    "folding_para": {"power": [9], "counts": 1},
+}
+
 # A pdb parser, writtein by BioPython, to extract protein atoms and
 # coordinates.
 

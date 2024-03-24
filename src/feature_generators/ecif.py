@@ -8,8 +8,8 @@ from rdkit import Chem
 from scipy.spatial.distance import cdist
 from Bio.PDB import PDBParser
 
-from .script import utils
-from .script import Mol
+from src.script import utils
+from src.script import Mol
 from .oic_dwic import FeatureGenerator
 
 

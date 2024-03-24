@@ -9,8 +9,8 @@ import numpy as np
 import pandas as pd
 from scipy import spatial
 
-from .script import utils
-from .script import mol2parser
+from src.script import utils
+from src.script import mol2parser
 
 
 class FeatureGenerator(object):
@@ -47,8 +47,8 @@ class FeatureGenerator(object):
 
         fvs = Parallel(n_jobs)(
             delayed(self.features_generator)(
-                glob(str(entry) + f"\\*.{self.ligand_format}")[0],
-                glob(str(entry) + "\\*.pdb")[0],
+                glob(str(entry) + f"\\*_ligand.{self.ligand_format}")[0],
+                glob(str(entry) + "\\*_protein.pdb")[0],
             )
             for entry in entries.iterdir()
         )
