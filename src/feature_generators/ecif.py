@@ -1,4 +1,4 @@
-"""Module provides functions for generating Extended Connectivity Interaction Features 
+"""Module provides functions for generating Extended Connectivity Interaction Features
 (ECIF) feature vector."""
 
 from itertools import product
