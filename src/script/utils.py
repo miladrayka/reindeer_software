@@ -142,7 +142,7 @@ ECIF_LigandAtoms = [
 ]
 
 
-# Parameters for PrtCmm IFP:
+# Parameters for PrtCmm IFP and PLEC FP:
 # alg_type - ifp algorithm ('avg', 'classic')
 # int_cutoff: distance cutoff for identifying contacting atoms in protein-ligand interfaces
 # ch_para - parameters for constructing alpha shapes (concave hulls) for protein and ligand
@@ -179,6 +179,27 @@ prtcmm_ifp_parameters = {
         "idf_power": 64,
     },
     "folding_para": {"power": [9], "counts": 1},
+}
+
+plec_fp_parameters = {
+    "alg_type": "avg",
+    "ch_para": {"weighted": 0, "alpha": [-1, -1], "alpha_step": [0.1, 0.1]},
+    "contact_para": {"int_cutoff": 4.5, "bins": [(0, 4.5)]},
+    "ifp_para": {
+        "ifptype": "plec",
+        "degrees": [5, 1],
+        "prop": [
+            "AtomicMass",
+            "TotalConnections",
+            "HeavyNeighborCount",
+            "HCount",
+            "FormalCharge",
+        ],
+        "heavy_atoms": 1,
+        "hash_type": "vec",
+        "idf_power": 64,
+    },
+    "folding_para": {"power": [11], "counts": 1},
 }
 
 # A pdb parser, writtein by BioPython, to extract protein atoms and
