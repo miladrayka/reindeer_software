@@ -39,7 +39,8 @@ class FeatureGenerator(object):
         Parameters
         ----------
         n_jobs : int, default: 1
-            The maximum number of concurrently running jobs.  If -1 all CPUs are used.
+            The maximum number of concurrently running jobs.  If -1 all CPUs
+            are used.
         """
 
         entries = Path(self.pathfiles)
@@ -79,7 +80,8 @@ class FeatureGenerator(object):
         df.to_csv(filename, index=True, index_label="pdbid")
 
     def features_generator(self, ligand_file: str, protein_file: str) -> dict:
-        """Feature generator function. Override this for different feature vector generator.
+        """Feature generator function. Override this for different feature
+        vector generator.
 
         Parameters
         ----------

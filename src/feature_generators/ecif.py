@@ -1,5 +1,5 @@
-"""Module provides functions for generating Extended Connectivity Interaction Features
-(ECIF) feature vector."""
+"""Module provides functions for generating Extended Connectivity Interaction
+Features (ECIF) feature vector."""
 
 from itertools import product
 
@@ -15,7 +15,8 @@ from .oic_dwic import FeatureGenerator
 
 class ECIF(FeatureGenerator):
     """ECIF is a class to generate features for ECIF techniques.
-    This code is developed by using ECIF original github code (https://github.com/DIFACQUIM/ECIF)
+    This code is developed by using ECIF original github code
+    (https://github.com/DIFACQUIM/ECIF).
     """
 
     def __init__(
