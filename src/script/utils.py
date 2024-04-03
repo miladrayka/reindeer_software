@@ -2,6 +2,8 @@
 
 from collections import defaultdict
 from Bio.PDB import PDBParser
+from tqdm.auto import tqdm
+from joblib import Parallel
 
 # Amino acid list for Occurrence of interatomic contacts feature.
 amino_acid_classes_OIC = [
@@ -181,3 +183,25 @@ def pdb_parser(pdbfile: str, amino_acid_classes: list) -> dict:
                     extracted_protein_atoms[name][atom.element].append(list(atom.coord))
 
     return extracted_protein_atoms
+
+
+class ProgressParallel(Parallel):
+    """A wrapper for Parallel class of joblib. This wrapper
+    add progress bar to Parallel. Code source: https://stackoverflow.com/
+    a/61900501.
+    """
+    def __init__(self, *args, use_tqdm=True, total=None, **kwargs):
+        self._use_tqdm = use_tqdm
+        self._total = total
+        self._pbar = None
+        super().__init__(*args, **kwargs)
+
+    def __call__(self, *args, **kwargs):
+        with tqdm(disable=not self._use_tqdm, total=self._total) as self._pbar:
+            return Parallel.__call__(self, *args, **kwargs)
+
+    def print_progress(self):
+        if self._total is None:
+            self._pbar.total = self.n_dispatched_tasks
+        self._pbar.n = self.n_completed_tasks
+        self._pbar.refresh()

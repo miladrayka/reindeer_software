@@ -3,7 +3,7 @@
 import time
 from glob import glob
 from pathlib import Path
-from joblib import Parallel, delayed
+from joblib import delayed
 
 import numpy as np
 import pandas as pd
@@ -46,7 +46,7 @@ class FeatureGenerator(object):
         entries = Path(self.pathfiles)
         start = time.time()
 
-        fvs = Parallel(n_jobs)(
+        fvs = utils.ProgressParallel(n_jobs)(
             delayed(self.features_generator)(
                 glob(str(entry) + f"\\*_ligand.{self.ligand_format}")[0],
                 glob(str(entry) + "\\*_protein.pdb")[0],
