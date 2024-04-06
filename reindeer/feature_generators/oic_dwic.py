@@ -1,5 +1,6 @@
 """Module provides functions for generating DWIC and OIC feature vector."""
 
+import os
 import time
 from glob import glob
 from pathlib import Path
@@ -9,13 +10,12 @@ import numpy as np
 import pandas as pd
 from scipy import spatial
 
-from src.script import utils
-from src.script import mol2parser
+from ..script import utils
+from ..script import mol2parser
 
 
 class FeatureGenerator(object):
     """Generate feature for protein-ligand complexes."""
-
     def __init__(self, pathfiles: str, filename: str, ligand_format: str) -> None:
         """_summary_
 
@@ -48,8 +48,8 @@ class FeatureGenerator(object):
 
         fvs = utils.ProgressParallel(n_jobs)(
             delayed(self.features_generator)(
-                glob(str(entry) + f"\\*_ligand.{self.ligand_format}")[0],
-                glob(str(entry) + "\\*_protein.pdb")[0],
+                glob(os.path.join(str(entry), f"*_ligand.{self.ligand_format}"))[0],
+                glob(os.path.join(str(entry), "*_protein.pdb"))[0],
             )
             for entry in entries.iterdir()
         )

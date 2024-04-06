@@ -8,8 +8,8 @@ from rdkit import Chem
 from scipy.spatial.distance import cdist
 from Bio.PDB import PDBParser
 
-from src.script import utils
-from src.script import Mol
+from ..script import utils
+from ..script.types import Mol
 from .oic_dwic import FeatureGenerator
 
 
@@ -40,7 +40,7 @@ class ECIF(FeatureGenerator):
             i[0] + "-" + i[1]
             for i in product(utils.ECIF_ProteinAtoms, utils.ECIF_LigandAtoms)
         ]
-        self.atom_keys = pd.read_csv("./src/files/PDB_Atom_Keys.csv", sep=",")
+        self.atom_keys = pd.read_csv("./reindeer/files/PDB_Atom_Keys.csv", sep=",")
 
     def features_generator(self, ligand_file: str, protein_file: str) -> dict:
         """Generate feature for a protein-ligand complex.
