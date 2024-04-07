@@ -2,13 +2,14 @@
 
 import argparse
 
-from feature_generators import oic_dwic
-from feature_generators import ecif
-from feature_generators import ms_oic
-from script import utils
+from reindeer.feature_generators import oic_dwic
+from reindeer.feature_generators import ecif
+from reindeer.feature_generators import ms_oic
+from reindeer.script import utils
 
-if __name__ == "__main__":
 
+def main():
+    """Main function for REINDEER CLI"""
     parser = argparse.ArgumentParser(
         description="""Generate features for
                                      set of given structures"""
@@ -50,7 +51,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.method == "OIC":
-
         oic = oic_dwic.InterAtomicContact(
             pathfiles=args.directory,
             filename=args.file_name,
@@ -63,7 +63,6 @@ if __name__ == "__main__":
         oic.generate_features(n_jobs=args.n_jobs)
 
     elif args.method == "DWIC":
-
         dwic = oic_dwic.InterAtomicContact(
             pathfiles=args.directory,
             filename=args.file_name,
@@ -76,22 +75,27 @@ if __name__ == "__main__":
         dwic.generate_features(n_jobs=args.n_jobs)
 
     elif args.method == "ECIF":
-        ecif = ecif.ECIF(
+        ecif_fv = ecif.ECIF(
             pathfiles=args.directory,
             filename=args.file_name,
             ligand_format="sdf",
             cutoff=6.0,
         )
-        ecif.generate_features(n_jobs=args.n_jobs)
+        ecif_fv.generate_features(n_jobs=args.n_jobs)
 
     elif args.method == "MS-OIC":
-        ms_oic = ms_oic.MultiShellOIC(
+        ms_oic_fv = ms_oic.MultiShellOIC(
             pathfiles=args.directory,
             filename=args.file_name,
             ligand_format="mol2",
             n_shells=62,
         )
-        ms_oic.generate_features(n_jobs=args.n_jobs)
+        ms_oic_fv.generate_features(n_jobs=args.n_jobs)
 
     else:
         raise ValueError("Method should be selected from implemented methods.")
+
+
+if __name__ == "__main__":
+
+    main()

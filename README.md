@@ -22,11 +22,30 @@ Paper is under construction.
 ## Contact
 Milad Rayka, milad.rayka@yahoo.com
 
+## Install
+
+1- First install python (3.9) then make a virtual environment and activate it.
+```
+python -m venv env
+.\env\Scripts\activate
+```
+Which *env* is the location to create the virtual environment.
+
+2- Clone *reindeer_software* Github repository.
+```
+git clone https://github.com/miladrayka/reindeer_software.git
+```
+3- Change your directory to *reindeer_software*.
+
+4- Install required packages with pip.
+```
+pip install -r requirements.txt
+```
 ## Notes
 
 1- Provided protein-ligand complex should have hydrogen atoms
 
-2- File formarts for protein and ligand are *.pdb* and *.mol2*. 
+2- File formats for protein and ligand are *.pdb* and *.mol2*. 
 In the case of ECIF, instead of *.mol2*, *.sdf* file should be provided.
 
 3- All protein-ligand complexes should be provided as the below example:
@@ -45,14 +64,24 @@ In the case of ECIF, instead of *.mol2*, *.sdf* file should be provided.
         ├── 1a30_ligand.sdf
         └── 1a30_protein.pd
 
+## Usage
+REINDEER provides GUI, CLI, and using within python codes for feature generation.
 
-## Graphical User Interface (GUI)
-REINDEER provides a GUI to make for feature generation methods. Check the [Tutorial](https://github.com/miladrayka/reindeer_software/blob/main/Tutorial.pdf) file.
+### Graphical User Interface (GUI)
+After changing your dicrectory to *reindeer_software* type the follwoing code for running GUI:
+```
+python ./gui_launcher.py
+```
+For example check the [Tutorial](https://github.com/miladrayka/reindeer_software/blob/main/Tutorial.pdf) file.
 
 ![GUI](https://github.com/miladrayka/reindeer_software/blob/main/GUI_img.PNG)
 
-## Command Line Interface (CLI)
-REINDEER provides a simple CLI to ease the usage.
+### Command Line Interface (CLI)
+For access to CLI, type the following command (you should be at *reindeer_software* directory):
+```
+python ./reindeer_software.py -h
+```
+The output is like this:
 
 ```
 usage: reindeer_software.py [-h] -m METHOD -d DIRECTORY -f FILE_NAME -n N_JOBS
@@ -77,14 +106,14 @@ Example for OIC:
 ```
 python ./reindeer_software.py -m OIC -d ../test/ -f feature_vector_oic.csv -n -1
 ```
-## As Module
-REINDEER can also be used as a module.
+### Within Python
+REINDEER can also be used within python codes.
 
 Example for OIC:
 
 ```
-from feature_generators import oic_dwic
-from script import utils
+from reindeer.feature_generators import oic_dwic
+from reindeer.script import utils
 
 oic = oic_dwic.InterAtomicContact(
     pathfiles="../test/",
@@ -97,6 +126,8 @@ oic = oic_dwic.InterAtomicContact(
 )
 ```
 
+[within_python_example.ipynb](https://github.com/miladrayka/reindeer_software/blob/main/within_python_example.ipynb) file provides examples for this usages.
+
 ## Case Study
 [CaseStudy.ipynb](https://github.com/miladrayka/reindeer_software/blob/main/CaseStudy.ipynb) contains all code to reproduce the case study section of the paper on Google COLAB.
 
@@ -104,8 +135,8 @@ oic = oic_dwic.InterAtomicContact(
 
 REINDEER is tested on the following system:
 
-| OS  |  RAM | CPU  | Browser |
-| ------------ | ------------ | ------------ |------------ |
+| OS  |  RAM | CPU  |
+| ------------ | ------------ | ------------ |
 | Windows 10  | 8.00 GB  |  AMD FX-770K Quad Core Processor (3.5 GHz) | 
 
 We don't assume using macOS or Linux. 
@@ -120,6 +151,16 @@ To ensure code quality and consistency the following extensions of VSCode are us
 - pylint
 - flake8
 - AI python docstring generators
+
+## Original Repository
+
+Following repositories were used for the development of REINDEER:
+
+* [ECIF Github](https://github.com/DIFACQUIM/ECIF) for ECIF method.
+
+* [ET-Score and RF-Score](https://github.com/miladrayka/ENS_Score) for DWIC and OIC methods.
+
+* [OnionNet-2](https://github.com/zchwang/OnionNet-2) MS-OIC method.
 
 ## Copy Right
 Copyright (c) 2024, Milad Rayka

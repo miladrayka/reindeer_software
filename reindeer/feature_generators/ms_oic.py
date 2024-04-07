@@ -8,7 +8,7 @@ import numpy as np
 from scipy.spatial.distance import cdist
 from Bio.PDB import PDBParser
 
-from script import mol2parser
+from ..script import mol2parser
 from .oic_dwic import FeatureGenerator
 
 
