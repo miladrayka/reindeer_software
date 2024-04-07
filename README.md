@@ -45,6 +45,7 @@ In the case of ECIF, instead of *.mol2*, *.sdf* file should be provided.
 
 ## Graphical User Interface (GUI)
 REINDEER provides a GUI to make for feature generation methods.
+
 ---
 ![pic01](https://github.com/miladrayka/reindeer_software/blob/main/images/pic01.PNG)
 
