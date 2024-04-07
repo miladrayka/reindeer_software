@@ -3,6 +3,9 @@
 
 # REINDEER Software
 REINDEER is a software for the sturcture-based protein-ligand feature generation.
+
+![Logo](https://github.com/miladrayka/reindeer_software/blob/main/reindeer/logo/Logo.png)
+
 Currently, REINDEER provides only four below feature vector:
 
 1- Occurrence of Interatomic Contact (OIC) - **[Ref](https://academic.oup.com/bioinformatics/article/26/9/1169/199938?login=false)**
@@ -12,9 +15,6 @@ Currently, REINDEER provides only four below feature vector:
 3- Extended Connectivity Interaction Feature (ECIF) - **[Ref](https://academic.oup.com/bioinformatics/article/37/10/1376/5998664?login=false)**
 
 4- Multi-Shell Occurrence of Interatomic Contact (MS-OIC) - **[Ref](https://www.frontiersin.org/articles/10.3389/fchem.2021.753002/full)**
-
-
-![Logo](https://github.com/miladrayka/reindeer_software/blob/main/reindeer/logo/Logo.png)
 
 ## Citation
 Paper is under construction.
@@ -115,3 +115,27 @@ oic = oic_dwic.InterAtomicContact(
 
 ## Case Study
 [CaseStudy.ipynb](https://github.com/miladrayka/reindeer_software/blob/main/CaseStudy.ipynb) contains all code to reproduce the case study section of the paper on Google COLAB.
+
+## System Specification
+
+REINDEER is tested on the following system:
+
+| OS  |  RAM | CPU  | Browser |
+| ------------ | ------------ | ------------ |------------ |
+| Windows 10  | 8.00 GB  |  AMD FX-770K Quad Core Processor (3.5 GHz) | 
+
+We don't assume using macOS or Linux. 
+
+## Development
+
+To ensure code quality and consistency the following extensions of VSCode are used during development:
+
+- black
+- isort
+- pylance
+- pylint
+- flake8
+- AI python docstring generators
+
+## Copy Right
+Copyright (c) 2024, Milad Rayka
