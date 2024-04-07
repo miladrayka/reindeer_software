@@ -67,5 +67,51 @@ REINDEER provides a GUI to make for feature generation methods.
 ---
 ![pic06](https://github.com/miladrayka/reindeer_software/blob/main/images/pic06.PNG)
 
+## Command Line Interface (CLI)
+REINDEER provides a simple CLI to ease the usage.
+
+```
+usage: reindeer_software.py [-h] -m METHOD -d DIRECTORY -f FILE_NAME -n N_JOBS
+
+Generate features for set of given structures
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -m METHOD, --method METHOD
+                        Feature generation method. Only OIC, DWIC, ECIF, and
+                        MS-OIC are implemented for now.
+  -d DIRECTORY, --directory DIRECTORY
+                        directory of structures files
+  -f FILE_NAME, --file_name FILE_NAME
+                        Name for saving generated features.
+  -n N_JOBS, --n_jobs N_JOBS
+                        Number of cpu cores for parallelization
+```
+
+Example for OIC:
+
+```
+python ./reindeer_software.py -m OIC -d ../test/ -f feature_vector_oic.csv -n -1
+```
+## As Module
+REINDEER can also be used as a module.
+
+Example for OIC:
+
+```
+from feature_generators import oic_dwic
+from script import utils
+
+oic = oic_dwic.InterAtomicContact(
+    pathfiles="../test/",
+    filename="oic_fv.csv",
+    ligand_format="mol2",
+    amino_acid_classes=utils.amino_acid_classes_OIC,
+    cutoff=12.0,
+    feature_type="OIC",
+    exp=None,
+)
+```
+
 ## Case Study
 [CaseStudy.ipynb](https://github.com/miladrayka/reindeer_software/blob/main/CaseStudy.ipynb) contains all code to reproduce the case study section of the paper on Google COLAB.
