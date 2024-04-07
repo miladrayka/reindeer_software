@@ -68,4 +68,4 @@ REINDEER provides a GUI to make for feature generation methods.
 ![pic06](https://github.com/miladrayka/reindeer_software/blob/main/images/pic06.PNG)
 
 ## Case Study
-CaseStudy.ipynb contains all code to reproduce the case study section of the paper on Google COLAB.
+[CaseStudy.ipynb](https://github.com/miladrayka/reindeer_software/blob/main/CaseStudy.ipynb) contains all code to reproduce the case study section of the paper on Google COLAB.
