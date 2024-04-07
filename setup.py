@@ -21,6 +21,7 @@ setup(
                       'joblib==1.3.2',
                       'typing-extensions==4.11.0',
                       'tqdm==4.66.2',
+                      'streamlit==1.25.0',
                       ],
 
     classifiers=[
