@@ -11,7 +11,7 @@ Currently, REINDEER provides only four below feature vector:
 4- Multi-Shell Occurrence of Interatomic Contact (MS-OIC) - **[Ref](https://www.frontiersin.org/articles/10.3389/fchem.2021.753002/full)**
 
 
-![Logo](https://github.com/miladrayka/reindeer_software/blob/main/logo/Logo.png)
+![Logo](https://github.com/miladrayka/reindeer_software/blob/main/reindeer/logo/Logo.png)
 
 ## Citation
 Paper is under construction.
@@ -46,15 +46,15 @@ In the case of ECIF, instead of *.mol2*, *.sdf* file should be provided.
 ## Graphical User Interface (GUI)
 REINDEER provides a GUI to make for feature generation methods.
 
-![pic01]("./images/pic01.PNG")
+![pic01](https://github.com/miladrayka/reindeer_software/blob/main/images/pic01.PNG)
 
-![pic02]("./images/pic02.PNG")
+![pic02](https://github.com/miladrayka/reindeer_software/blob/main/images/pic02.PNG)
 
-![pic03]("./images/pic02.PNG")
+![pic03](https://github.com/miladrayka/reindeer_software/blob/main/images/pic03.PNG)
 
-![pic04]("./images/pic02.PNG")
+![pic04](https://github.com/miladrayka/reindeer_software/blob/main/images/pic04.PNG)
 
-![pic05]("./images/pic02.PNG")
+![pic05](https://github.com/miladrayka/reindeer_software/blob/main/images/pic05.PNG)
 
-![pic06]("./images/pic02.PNG")
+![pic06](https://github.com/miladrayka/reindeer_software/blob/main/images/pic06.PNG)
 
