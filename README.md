@@ -141,7 +141,7 @@ REINDEER is tested on the following system:
 | ------------ | ------------ | ------------ |
 | Windows 10  | 8.00 GB  |  AMD FX-770K Quad Core Processor (3.5 GHz) | 
 
-We don't assume using macOS or Linux. 
+We don't assume using macOS or Linux can make a problem. 
 
 ## Development
 
