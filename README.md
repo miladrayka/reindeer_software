@@ -17,7 +17,8 @@ Currently, REINDEER provides only four below feature vector:
 4- Multi-Shell Occurrence of Interatomic Contact (MS-OIC) - **[Ref](https://www.frontiersin.org/articles/10.3389/fchem.2021.753002/full)**
 
 ## Citation
-Project is not done. I wiil update the repository and the paper in the following months. But, for now, you can cite the below paper: 
+Project is not done. I will update the repository and the paper in the following months. But, for now, you can cite the below paper: 
+
 [REINDEER: A Protein-Ligand Feature Generator Software for Machine Learning Algorithms](https://chemrxiv.org/engage/chemrxiv/article-details/6613916c21291e5d1d5cd171)
 
 ## Contact
