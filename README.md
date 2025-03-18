@@ -109,7 +109,7 @@ optional arguments:
 Example for OIC:
 
 ```
-python ./reindeer_software.py -m OIC -d ../test/ -f feature_vector_oic.csv -n -1
+python ./reindeer_software.py -m OIC -d ./test/ -f feature_vector_oic.csv -n -1
 ```
 ### Within Python
 REINDEER can also be used within Python codes.
@@ -121,7 +121,7 @@ from reindeer.feature_generators import oic_dwic
 from reindeer.script import utils
 
 oic = oic_dwic.InterAtomicContact(
-    pathfiles="../test/",
+    pathfiles="./test/",
     filename="oic_fv.csv",
     ligand_format="mol2",
     amino_acid_classes=utils.amino_acid_classes_OIC,
