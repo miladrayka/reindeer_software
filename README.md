@@ -2,11 +2,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # REINDEER Software
-REINDEER is a software for the sturcture-based protein-ligand feature generation.
+
+REINDEER is a software for structure-based protein-ligand feature generation.
 
 ![Logo](https://github.com/miladrayka/reindeer_software/blob/main/reindeer/logo/Logo.png)
 
-Currently, REINDEER provides only four below feature vector:
+Currently, REINDEER provides only four feature vectors:
 
 1- Occurrence of Interatomic Contact (OIC) - **[Ref](https://academic.oup.com/bioinformatics/article/26/9/1169/199938?login=false)**
 
@@ -17,16 +18,18 @@ Currently, REINDEER provides only four below feature vector:
 4- Multi-Shell Occurrence of Interatomic Contact (MS-OIC) - **[Ref](https://www.frontiersin.org/articles/10.3389/fchem.2021.753002/full)**
 
 ## Citation
-Project is not done. I will update the repository and the paper in the following months. But, for now, you can cite the below paper: 
+
+The paper is currently under review. For now, you can cite the below paper:
 
 [REINDEER: A Protein-Ligand Feature Generator Software for Machine Learning Algorithms](https://chemrxiv.org/engage/chemrxiv/article-details/6613916c21291e5d1d5cd171)
 
 ## Contact
+
 Milad Rayka, milad.rayka@yahoo.com
 
 ## Install
 
-1- First install python (3.9) then make a virtual environment and activate it.
+1- First install Python (3.9) then make a virtual environment and activate it.
 ```
 python -m venv env
 .\env\Scripts\activate
@@ -67,19 +70,19 @@ In the case of ECIF, instead of *.mol2*, *.sdf* file should be provided.
         └── 1a30_protein.pd
 
 ## Usage
-REINDEER provides GUI, CLI, and using within python codes for feature generation.
+REINDEER provides GUI, CLI, and using within Python codes for feature generation.
 
 ### Graphical User Interface (GUI)
-After changing your dicrectory to *reindeer_software* type the follwoing code for running GUI:
+After changing your directory to *reindeer_software* type the following code for running GUI:
 ```
 python ./gui_launcher.py
 ```
-For example check the [Tutorial](https://github.com/miladrayka/reindeer_software/blob/main/Tutorial.pdf) file.
+For example, check the [Tutorial](https://github.com/miladrayka/reindeer_software/blob/main/Tutorial.pdf) file.
 
 ![GUI](https://github.com/miladrayka/reindeer_software/blob/main/GUI_img.PNG)
 
 ### Command Line Interface (CLI)
-For access to CLI, type the following command (you should be at *reindeer_software* directory):
+For access to CLI, type the following command (you should be in *reindeer_software* directory):
 ```
 python ./reindeer_software.py -h
 ```
@@ -109,7 +112,7 @@ Example for OIC:
 python ./reindeer_software.py -m OIC -d ../test/ -f feature_vector_oic.csv -n -1
 ```
 ### Within Python
-REINDEER can also be used within python codes.
+REINDEER can also be used within Python codes.
 
 Example for OIC:
 
@@ -131,7 +134,7 @@ oic = oic_dwic.InterAtomicContact(
 [within_python_example.ipynb](https://github.com/miladrayka/reindeer_software/blob/main/within_python_example.ipynb) file provides examples for this usages.
 
 ## Case Study
-[CaseStudy.ipynb](https://github.com/miladrayka/reindeer_software/blob/main/CaseStudy.ipynb) contains all code to reproduce the case study section of the paper on Google COLAB.
+All codes to reproduce the case study will be available in a Zenodo repository after publication.
 
 ## System Specification
 
@@ -139,9 +142,9 @@ REINDEER is tested on the following system:
 
 | OS  |  RAM | CPU  |
 | ------------ | ------------ | ------------ |
-| Windows 10  | 8.00 GB  |  AMD FX-770K Quad Core Processor (3.5 GHz) | 
+| Ubuntu 24.04 | 64.00 GB  |  Intel(R) Core(TM) i7-14700KF | 
 
-We don't assume using macOS or Linux can make a problem. 
+We don't assume using macOS or Windows can cause a problem. 
 
 ## Development
 
@@ -152,11 +155,11 @@ To ensure code quality and consistency the following extensions of VSCode are us
 - pylance
 - pylint
 - flake8
-- AI python docstring generators
+- AI Python docstring generators
 
 ## Original Repository
 
-Following repositories were used for the development of REINDEER:
+The following repositories were used for the development of REINDEER:
 
 * [ECIF Github](https://github.com/DIFACQUIM/ECIF) for ECIF method.
 
