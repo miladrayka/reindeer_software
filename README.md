@@ -132,9 +132,6 @@ oic = oic_dwic.InterAtomicContact(
 
 oic.generate_features(n_jobs=-1)
 ```
-
-[within_python_example.ipynb](https://github.com/miladrayka/reindeer_software/blob/main/within_python_example.ipynb) file provides examples for this usages.
-
 ## Case Study
 All codes to reproduce the case study will be available in a Zenodo repository after publication.
 
