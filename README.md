@@ -116,7 +116,7 @@ REINDEER can also be used within Python codes.
 
 Example for OIC:
 
-```bash
+```
 from reindeer.feature_generators import oic_dwic
 from reindeer.script import utils
 
