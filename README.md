@@ -164,6 +164,7 @@ REINDEER is tested on:
 |OS|RAM|CPU|
 |---|---|---|
 |Ubuntu 24.04|64.00 GB|Intel(R) Core(TM) i7-14700KF|
+
 macOS and Windows are expected to work as well, though not officially tested.
 
 ---
