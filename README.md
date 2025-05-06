@@ -185,6 +185,12 @@ VSCode extensions used during development:
 - AI Python docstring generators
 
 ---
+
+## :bar_chart: Case Study
+All codes to reproduce the case study will be available after publication.
+
+---
+
 ## 📚 Original Repositories
 
 - [ECIF Github](https://github.com/DIFACQUIM/ECIF)
