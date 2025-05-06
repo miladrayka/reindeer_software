@@ -1,94 +1,116 @@
-[![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-360/)
+[![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Last Commit](https://img.shields.io/github/last-commit/miladrayka/reindeer_software)
+![Issues](https://img.shields.io/github/issues/miladrayka/reindeer_software)
 
-# REINDEER Software
+# 🦌 REINDEER: A Protein-Ligand Feature Generator
 
-REINDEER is a software for structure-based protein-ligand feature generation.
+Efficiently generate structure-based protein-ligand interaction features for machine learning models.
 
 ![Logo](https://github.com/miladrayka/reindeer_software/blob/main/reindeer/logo/Logo.png)
 
-Currently, REINDEER provides only four feature vectors:
+---
+## 📚 Table of Contents
+- [Features](#-features)
+- [Installation](#-installation)
+- [Notes](#️-notes)
+- [Usage](#️-usage)
+  - [GUI](#-gui)
+  - [CLI](#-cli)
+  - [Python API](#-python-api)
+- [Citation](#-citation)
+- [Case Study](#-case-study)
+- [System Specification](#-system-specification)
+- [Development](#-development)
+- [Original Repositories](#-original-repositories)
+- [License](#-license)
+- [Contact](#-contact)
 
-1- Occurrence of Interatomic Contact (OIC) - **[Ref](https://academic.oup.com/bioinformatics/article/26/9/1169/199938?login=false)**
+---
+## 🔬 Features
 
-2- Distance-Weighted Interatomic Contact (DWIC) - **[Ref](https://onlinelibrary.wiley.com/doi/abs/10.1002/minf.202060084)**
+REINDEER supports the following feature generation methods:
 
-3- Extended Connectivity Interaction Feature (ECIF) - **[Ref](https://academic.oup.com/bioinformatics/article/37/10/1376/5998664?login=false)**
+- **OIC**: Occurrence of Interatomic Contact ([Ref](https://academic.oup.com/bioinformatics/article/26/9/1169/199938?login=false))
+- **DWIC**: Distance-Weighted Interatomic Contact ([Ref](https://onlinelibrary.wiley.com/doi/abs/10.1002/minf.202060084))
+- **ECIF**: Extended Connectivity Interaction Features ([Ref](https://academic.oup.com/bioinformatics/article/37/10/1376/5998664?login=false))
+- **MS-OIC**: Multi-Shell Occurrence of Interatomic Contact ([Ref](https://www.frontiersin.org/articles/10.3389/fchem.2021.753002/full))
 
-4- Multi-Shell Occurrence of Interatomic Contact (MS-OIC) - **[Ref](https://www.frontiersin.org/articles/10.3389/fchem.2021.753002/full)**
+---
+## 🚀 Installation
 
-## Citation
-
-The paper is currently under review. For now, you can cite the below paper:
-
-[REINDEER: A Protein-Ligand Feature Generator Software for Machine Learning Algorithms](https://chemrxiv.org/engage/chemrxiv/article-details/6613916c21291e5d1d5cd171)
-
-## Contact
-
-Milad Rayka, milad.rayka@yahoo.com
-
-## Install
-
-1- First install Python (3.9) then make a virtual environment and activate it.
+1. Create and activate a Python 3.9 virtual environment:
+```bash
+   python -m venv env
+   source env/bin/activate  # On Windows: .\env\Scripts\activate
 ```
-python -m venv env
-.\env\Scripts\activate
-```
-Which *env* is the location to create the virtual environment.
 
-2- Clone *reindeer_software* Github repository.
-```
+2. Clone the repository:
+
+```bash
 git clone https://github.com/miladrayka/reindeer_software.git
-```
-3- Change your directory to *reindeer_software*.
+cd reindeer_software
 
-4- Install required packages with pip.
 ```
+3. Install dependencies:
+```bash
 pip install -r requirements.txt
 ```
-## Notes
 
-1- Provided protein-ligand complex should have hydrogen atoms
+---
+💡 Notes
+- Input protein-ligand complexes **must include hydrogen atoms**.
+- Supported file formats:
+	- Protein: `.pdb`
+	- Ligand: `.mol2` (use `.sdf` for ECIF)
 
-2- File formats for protein and ligand are *.pdb* and *.mol2*. 
-In the case of ECIF, instead of *.mol2*, *.sdf* file should be provided.
-
-3- All protein-ligand complexes should be provided as the below example:
-
-    ./test
-    ├── 1a1e
-    │   ├── 1a1e_ligand.mol2
-    │   ├── 1a1e_ligand.sdf
-    │   └── 1a1e_protein.pdb
-    ├── 1a28
-    │   ├── 1a28_ligand.mol2
-    │   ├── 1a28_ligand.sdf
-    │   └── 1a28_protein.pdb
-    ├── 1a30
-        ├── 1a30_ligand.mol2
-        ├── 1a30_ligand.sdf
-        └── 1a30_protein.pd
-
-## Usage
-REINDEER provides GUI, CLI, and using within Python codes for feature generation.
-
-### Graphical User Interface (GUI)
-After changing your directory to *reindeer_software* type the following code for running GUI:
+```bash
+./test
+├── 1a1e
+│   ├── 1a1e_ligand.mol2
+│   ├── 1a1e_ligand.sdf
+│   └── 1a1e_protein.pdb
+├── 1a28
+│   ├── 1a28_ligand.mol2
+│   ├── 1a28_ligand.sdf
+│   └── 1a28_protein.pdb
+├── 1a30
+│   ├── 1a30_ligand.mol2
+│   ├── 1a30_ligand.sdf
+│   └── 1a30_protein.pdb
 ```
+
+---
+### 🔳 GUI
+
+Launch the GUI:
+
+```bash
 python ./gui_launcher.py
 ```
-For example, check the [Tutorial](https://github.com/miladrayka/reindeer_software/blob/main/Tutorial.pdf) file.
+
+👉 See the [Tutorial](https://github.com/miladrayka/reindeer_software/blob/main/Tutorial.pdf) for step-by-step instructions.
 
 ![GUI](https://github.com/miladrayka/reindeer_software/blob/main/GUI_img.PNG)
 
-### Command Line Interface (CLI)
-For access to CLI, type the following command (you should be in *reindeer_software* directory):
-```
+---
+### 💻 CLI
+
+Show help message:
+
+```bash
 python ./reindeer_software.py -h
 ```
-The output is like this:
 
+Example (OIC feature generation):
+
+```bash
+python ./reindeer_software.py -m OIC -d ./test/ -f feature_vector_oic.csv -n -1
 ```
+
+CLI Arguments:
+
+```bash
 usage: reindeer_software.py [-h] -m METHOD -d DIRECTORY -f FILE_NAME -n N_JOBS
 
 Generate features for set of given structures
@@ -96,27 +118,21 @@ Generate features for set of given structures
 optional arguments:
   -h, --help            show this help message and exit
   -m METHOD, --method METHOD
-                        Feature generation method. Only OIC, DWIC, ECIF, and
-                        MS-OIC are implemented for now.
+                        Feature generation method. Only OIC, DWIC, ECIF, and MS-OIC are implemented for now.
   -d DIRECTORY, --directory DIRECTORY
-                        directory of structures files
+                        Directory of structure files
   -f FILE_NAME, --file_name FILE_NAME
-                        Name for saving generated features.
+                        Name for saving generated features
   -n N_JOBS, --n_jobs N_JOBS
-                        Number of cpu cores for parallelization
+                        Number of CPU cores for parallelization
 ```
 
-Example for OIC:
+---
+### ⚙️ Python API
 
-```
-python ./reindeer_software.py -m OIC -d ./test/ -f feature_vector_oic.csv -n -1
-```
-### Within Python
-REINDEER can also be used within Python codes.
+Example (OIC feature generation):
 
-Example for OIC:
-
-```
+```bash
 from reindeer.feature_generators import oic_dwic
 from reindeer.script import utils
 
@@ -132,39 +148,57 @@ oic = oic_dwic.InterAtomicContact(
 
 oic.generate_features(n_jobs=-1)
 ```
-## Case Study
-All codes to reproduce the case study will be available in a Zenodo repository after publication.
 
-## System Specification
+---
+## 📄 Citation
 
-REINDEER is tested on the following system:
+The paper is currently under review. Please cite the preprint:
 
-| OS  |  RAM | CPU  |
-| ------------ | ------------ | ------------ |
-| Ubuntu 24.04 | 64.00 GB  |  Intel(R) Core(TM) i7-14700KF | 
+> Rayka, M. _REINDEER: A Protein-Ligand Feature Generator Software for Machine Learning Algorithms._ [ChemRxiv](https://chemrxiv.org/engage/chemrxiv/article-details/6613916c21291e5d1d5cd171)
 
-We don't assume using macOS or Windows can cause a problem. 
+---
+## 🖥️ System Specification
 
-## Development
+REINDEER is tested on:
 
-To ensure code quality and consistency the following extensions of VSCode are used during development:
+|OS|RAM|CPU|
+|---|---|---|
+|Ubuntu 24.04|64.00 GB|Intel(R) Core(TM) i7-14700KF|
+macOS and Windows are expected to work as well, though not officially tested.
 
-- black
-- isort
-- pylance
-- pylint
-- flake8
+---
+## 🔧 Development
+
+VSCode extensions used during development:
+
+- `black`
+    
+- `isort`
+    
+- `pylance`
+    
+- `pylint`
+    
+- `flake8`
+    
 - AI Python docstring generators
 
-## Original Repository
+---
+## 📚 Original Repositories
 
-The following repositories were used for the development of REINDEER:
+- [ECIF Github](https://github.com/DIFACQUIM/ECIF)
+    
+- [ET-Score and RF-Score](https://github.com/miladrayka/ENS_Score)
+    
+- [OnionNet-2](https://github.com/zchwang/OnionNet-2)
 
-* [ECIF Github](https://github.com/DIFACQUIM/ECIF) for ECIF method.
+---
+## 📝 License
 
-* [ET-Score and RF-Score](https://github.com/miladrayka/ENS_Score) for DWIC and OIC methods.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-* [OnionNet-2](https://github.com/zchwang/OnionNet-2) MS-OIC method.
+---
+## 📬 Contact
 
-## Copy Right
-Copyright (c) 2025, Milad Rayka
+Milad Rayka  
+📧 [milad.rayka@yahoo.com](mailto:milad.rayka@yahoo.com)
