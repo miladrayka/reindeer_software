@@ -157,6 +157,10 @@ The paper is currently under review. Please cite the preprint:
 > Rayka, M. _REINDEER: A Protein-Ligand Feature Generator Software for Machine Learning Algorithms._ [ChemRxiv](https://chemrxiv.org/engage/chemrxiv/article-details/6613916c21291e5d1d5cd171)
 
 ---
+## :bar_chart: Case Study
+All codes to reproduce the case study will be available after publication.
+
+---
 ## 🖥️ System Specification
 
 REINDEER is tested on:
@@ -183,11 +187,6 @@ VSCode extensions used during development:
 - `flake8`
     
 - AI Python docstring generators
-
----
-
-## :bar_chart: Case Study
-All codes to reproduce the case study will be available after publication.
 
 ---
 
